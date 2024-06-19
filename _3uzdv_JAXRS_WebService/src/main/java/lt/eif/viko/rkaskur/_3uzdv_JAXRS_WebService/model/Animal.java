@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Animal {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
     private String name;
     private String gender;
@@ -13,6 +13,10 @@ public class Animal {
     @ManyToOne(targetEntity = Vet.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "vet_id")
     private Vet vet;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
 
     // Getters and setters
     public int getID() {
@@ -45,5 +49,13 @@ public class Animal {
 
     public void setVet(Vet vet) {
         this.vet = vet;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }

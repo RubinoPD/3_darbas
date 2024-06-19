@@ -11,33 +11,33 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  The lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService package contains classes related to handling
  exceptions in the JAX-RS web service.
  <p>
- This package includes the {@link ComputerShopNotFoundAdvice} class, which serves as an advice class
- annotated with {@link ControllerAdvice}. It handles exceptions of type {@link ComputerShopNotFoundException}
+ This package includes the {@link VeterinaryNotFoundAdvice} class, which serves as an advice class
+ annotated with {@link ControllerAdvice}. It handles exceptions of type {@link VeterinaryNotFoundException}
  and provides a response with the HTTP status code {@link HttpStatus#NOT_FOUND} and the exception message.
 
 
- To handle the {@link ComputerShopNotFoundException} exception, the {@link ExceptionHandler} annotation is used
+ To handle the {@link VeterinaryNotFoundException} exception, the {@link ExceptionHandler} annotation is used
  along with the {@link ResponseBody} annotation to indicate that the return value of the method should be
  serialized directly into the response body. The {@link ResponseStatus} annotation is used to set the HTTP
  status code of the response to {@link HttpStatus#NOT_FOUND}.
 
- @see ComputerShopNotFoundAdvice
+ @see VeterinaryNotFoundAdvice
  @see ControllerAdvice
  @see ExceptionHandler
  @see ResponseBody
  @see ResponseStatus
  @see HttpStatus
- @see ComputerShopNotFoundException
+ @see VeterinaryNotFoundException
  */
 
 @ControllerAdvice
-class ComputerShopNotFoundAdvice {
+class VeterinaryNotFoundAdvice {
 
 
 	@ResponseBody
-	@ExceptionHandler(ComputerShopNotFoundException.class)
+	@ExceptionHandler(VeterinaryNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	String employeeNotFoundHandler(ComputerShopNotFoundException ex) {
+	String employeeNotFoundHandler(VeterinaryNotFoundException ex) {
 		return ex.getMessage();
 	}
 }

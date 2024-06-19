@@ -1,10 +1,6 @@
 package lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.Database;
 
-import lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.ComputerShopRepo;
 import lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.model.Account;
-import lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.model.Categories;
-import lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.model.ClientShipping;
-import lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.model.Components;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

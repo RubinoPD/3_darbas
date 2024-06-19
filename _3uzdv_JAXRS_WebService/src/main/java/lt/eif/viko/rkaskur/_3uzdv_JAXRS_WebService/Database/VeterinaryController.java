@@ -30,8 +30,8 @@ public class VeterinaryController {
     }
 
     @GetMapping("/animals/{id}")
-    public Optional<Animal> getAnimalById(@PathVariable int animal_id) {
-        return animalRepository.findById(animal_id);
+    public Optional<Animal> getAnimalById(@PathVariable int id) {
+        return animalRepository.findById(id);
     }
 
     @PostMapping("/animals")
@@ -40,8 +40,8 @@ public class VeterinaryController {
     }
 
     @DeleteMapping("/animals/{id}")
-    public void deleteAnimal(@PathVariable int animal_id) {
-        animalRepository.deleteById(animal_id);
+    public void deleteAnimal(@PathVariable int id) {
+        animalRepository.deleteById(id);
     }
 
     // Owner endpoints
@@ -51,8 +51,8 @@ public class VeterinaryController {
     }
 
     @GetMapping("/owners/{id}")
-    public Optional<Owner> getOwnerById(@PathVariable int owner_id) {
-        return ownerRepository.findById(owner_id);
+    public Optional<Owner> getOwnerById(@PathVariable int id) {
+        return ownerRepository.findById(id);
     }
 
     @PostMapping("/owners")
@@ -61,8 +61,8 @@ public class VeterinaryController {
     }
 
     @DeleteMapping("/owners/{id}")
-    public void deleteOwner(@PathVariable int owner_id) {
-        ownerRepository.deleteById(owner_id);
+    public void deleteOwner(@PathVariable int id) {
+        ownerRepository.deleteById(id);
     }
 
     // Vet endpoints
@@ -72,8 +72,8 @@ public class VeterinaryController {
     }
 
     @GetMapping("/vets/{id}")
-    public Optional<Vet> getVetById(@PathVariable int vet_id) {
-        return vetRepository.findById(vet_id);
+    public Optional<Vet> getVetById(@PathVariable int id) {
+        return vetRepository.findById(id);
     }
 
     @PostMapping("/vets")
@@ -82,7 +82,7 @@ public class VeterinaryController {
     }
 
     @DeleteMapping("/vets/{id}")
-    public void deleteVet(@PathVariable int vet_id) {
-        vetRepository.deleteById(vet_id);
+    public void deleteVet(@PathVariable int id) {
+        vetRepository.deleteById(id);
     }
 }

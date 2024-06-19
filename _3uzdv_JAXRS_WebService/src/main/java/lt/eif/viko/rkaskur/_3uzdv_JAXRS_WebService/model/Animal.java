@@ -18,6 +18,7 @@ public class Animal {
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
+    @JsonBackReference
     private Owner owner;
 
     // Getters and setters

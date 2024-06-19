@@ -1,5 +1,7 @@
 package lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -7,21 +9,22 @@ import java.util.List;
 public class Vet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int vet_id;
     private String name;
     private String lastname;
     private String specialization;
 
     @OneToMany(mappedBy = "vet", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Animal> animals;
 
     // Getters and setters
-    public int getID() {
-        return ID;
+    public int getVet_id() {
+        return vet_id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setVet_id(int vet_id) {
+        this.vet_id = vet_id;
     }
 
     public String getName() {

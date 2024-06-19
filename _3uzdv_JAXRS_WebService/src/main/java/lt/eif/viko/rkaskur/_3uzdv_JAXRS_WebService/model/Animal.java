@@ -1,17 +1,19 @@
 package lt.eif.viko.rkaskur._3uzdv_JAXRS_WebService.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int animal_id;
     private String name;
     private String gender;
 
-    @ManyToOne(targetEntity = Vet.class, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "vet_id")
+    @JsonBackReference
     private Vet vet;
 
     @ManyToOne
@@ -19,12 +21,12 @@ public class Animal {
     private Owner owner;
 
     // Getters and setters
-    public int getID() {
-        return ID;
+    public int getAnimal_id() {
+        return animal_id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setAnimal_id(int animal_id) {
+        this.animal_id = animal_id;
     }
 
     public String getName() {
